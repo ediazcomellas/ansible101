@@ -1,0 +1,4 @@
+---
+- name: Instalar apache, php, mysql y desplegar una aplicacion lamp
+  hosts: target1
+  tasks:

@@ -1,4 +1,6 @@
 Día 1 de playbooks.
+-------------------
+
 
 Antes de nada vamos a librarnos de los parámetros -k -K. 
 Para eso estableceremos una llave pública y haremos que nuestro usuario tenga

@@ -10,12 +10,12 @@ Mientras la aplicación no esté desplegada no queremos que se quede el index.ht
 Pasos:
 -------
 
-1.- Instalación de software
-2.- Configuración de apache
-3.- Copia de la aplicación desde un servidor externo
-4.- Creación de bbdd y usuario de bbdd
-5.- Carga de datos en la bbdd
-6.- Borrar index.html temporal y hacer limpieza
+1. Instalación de software
+2. Configuración de apache
+3. Copia de la aplicación desde un servidor externo
+4. Creación de bbdd y usuario de bbdd
+5. Carga de datos en la bbdd
+6. Borrar index.html temporal y hacer limpieza
 
 
 

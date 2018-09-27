@@ -1,6 +1,6 @@
 ---
 - name: Instalar apache, php, mysql y desplegar una aplicacion lamp
-  hosts: target1
+  hosts: targets
   tasks:
    - name: Instalar software
      apt: 
@@ -35,9 +35,15 @@
 
    - name: activar php
      apache2_module:
-        name: php7.0
-        state: present
+        name: "{{ item.mod }}"
+        state: "{{ item.estado }}"
+        ignore_configcheck: "{{ item.ignore }}"
+     loop:
+       - { mod: "mpm_event", estado: "absent", ignore: true }
+       - { mod: "mpm_prefork", estado: "present", ignore: true}
+       - { mod: "php7.0", estado: "present", ignore: false}
      notify: Reiniciar apache
+
 
    - name: descargar la aplicacion al master
      get_url:
@@ -47,6 +53,7 @@
      delegate_to: master
      register: descarga
      tags: actualizar
+     run_once: true
 
    - name: sustituir pagina index.html con plantilla
      template:
